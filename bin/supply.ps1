@@ -15,7 +15,7 @@ Param(
 Write-Host "Supplying Flyway 5.0.7"
 
 $url = "https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/5.0.7/flyway-commandline-5.0.7-windows-x64.zip"
-$BinDir = $DepDir\$SubDir\bin
+$BinDir = $DepDir + "\" + $SubDir + "\bin"
 
 New-Item -ItemType directory -Path $BinDir
 
