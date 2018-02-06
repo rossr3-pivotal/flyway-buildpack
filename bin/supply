@@ -7,9 +7,9 @@ CACHE_DIR=$2
 DEP_DIR=$3
 SUB_DIR=$4
 
-echo Supplying FlyWay version 5.0.7 for Windows
+echo Supplying FlyWay version 5.0.7 for Linux
 
-flyway_url=https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/5.0.7/flyway-commandline-5.0.7-windows-x64.zip
+flyway_url=https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/5.0.7/flyway-commandline-5.0.7-linux-x64.tar.gz
 bin_dir=$DEP_DIR/$SUB_DIR/bin
 
 mkdir -p $bin_dir
