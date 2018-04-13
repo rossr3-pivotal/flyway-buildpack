@@ -27,7 +27,7 @@ echo Downloading flyway...
 curl -s --retry 15 --retry-delay 2 -L $flyway_url -o $bin_dir/flyway.tar.gz
 cd $bin_dir
 tar xvzf flyway.tar.gz
-mv flyway-5.0.7/ $bin_dir/
+mv flyway-5.0.7/* .
 rm -rf flyway-5.0.7/
 rm flyway.tar.gz
 
