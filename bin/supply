@@ -34,9 +34,12 @@ echo Cache Dir $CACHE_DIR
 echo Dep Dir $DEP_DIR
 echo Sub Dir $SUB_DIR
 
-echo Creating $BUILD_DIR/profile.d 
+PROFILED_FOLDER=$DEP_DIR/$SUB_DIR/profile.d
+PROFILED_FILE=$PROFILED_FOLDER/profile.d
+echo Creating $PROFILED_FILE
+mkdir -p $PROFILED_FOLDER
 # Create a profile.d file to set any environment variables
 flywaybin="export PCF_FLYWAY_BINDIR=$bin_dir"
-echo $flywaybin > $BUILD_DIR/profile.d 
+echo $flywaybin > $PROFILED_FILE 
 echo Flyway buildpack complete
 
