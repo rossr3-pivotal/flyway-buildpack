@@ -10,12 +10,12 @@ SUB_DIR=$4
 echo Supplying FlyWay version 5.0.7 for Linux
 
 # Create a config.yml file in the /tmp/deps/IDX/ folder
-#TEMP_DIR=/tmp/deps/$SUB_DIR
-#mkdir -p $TEMP_DIR
-#cat > $TEMP_DIR/config.yml << EOF
-#name: flyway-buildpack
-#version: 0.1
-#EOF
+TEMP_DIR=/tmp/deps/$SUB_DIR
+mkdir -p $TEMP_DIR
+cat > $TEMP_DIR/config.yml << EOF
+name: flyway-buildpack
+version: 0.1
+EOF
 
 flyway_url=https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/5.0.7/flyway-commandline-5.0.7-linux-x64.tar.gz
 bin_dir=$DEP_DIR/$SUB_DIR/bin
@@ -24,13 +24,13 @@ echo Making $bin_dir
 mkdir -p $bin_dir
 
 echo Downloading flyway...
-curl -s --retry 15 --retry-delay 2 -L $flyway_url -o $bin_dir/flyway.zip
-unzip $bin_dir/flyway.zip
+curl -s --retry 15 --retry-delay 2 -L $flyway_url -o $bin_dir/flyway.tar.gz
+tar xvzf $bin_dir/flyway.tar.gz
 mv $bin_dir/flyway-5.0.7/ $bin_dir/
 rm -rf $bin_dir/flyway-5.0.7/
-rm flyway.zip
+rm flyway.tar.gz
 
 # Create a profile.d file to set any environment variables
-#flywaybin="export PCF_FLYWAY_BINDIR=$bin_dir"
-#echo $flywaybin > $DEP_DIR/profile.d 
+flywaybin="export PCF_FLYWAY_BINDIR=$bin_dir"
+echo $flywaybin > $DEP_DIR/profile.d 
 
