@@ -39,7 +39,7 @@ PROFILED_FILE=$PROFILED_FOLDER/profile.d
 echo Creating $PROFILED_FILE
 mkdir -p $PROFILED_FOLDER
 # Create a profile.d file to set any environment variables
-flywaybin="export PCF_FLYWAY_BINDIR=$bin_dir"
+flywaybin='export PCF_FLYWAY_BINDIR=$DEPS_DIR/$DEPS_IDX'
 echo $flywaybin > $PROFILED_FILE 
 echo Flyway buildpack complete
 
