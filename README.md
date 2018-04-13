@@ -16,6 +16,8 @@ cf push myApp -m 512m --no-start -b binary_buildpack
 cf v3-push myApp -b https://github.com/rossr3-pivotal/flyway-buildpack.git -b "your last buildpack"
 ```
 
+For testing Linux, I used the PHP buildpack and this [simple app](https://github.com/rossr3-pivotal/php-show-env-vars) to validate that the environment variable(s) were set correctly. 
+
 The buildpack sets the environment variable PCF_FLYWAY_BINDIR to point to the folder where the flyway app is located.
 
 You would then call flyway from your application using 
