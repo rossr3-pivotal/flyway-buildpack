@@ -34,9 +34,9 @@ echo Cache Dir $CACHE_DIR
 echo Dep Dir $DEP_DIR
 echo Sub Dir $SUB_DIR
 
-echo Creating $DEP_DIR/profile.d 
+echo Creating $BUILD_DIR/profile.d 
 # Create a profile.d file to set any environment variables
 flywaybin="export PCF_FLYWAY_BINDIR=$bin_dir"
-echo $flywaybin > $DEP_DIR/profile.d 
+echo $flywaybin > $BUILD_DIR/profile.d 
 echo Flyway buildpack complete
 
