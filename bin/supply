@@ -10,9 +10,7 @@ SUB_DIR=$4
 echo Supplying FlyWay version 5.0.7 for Linux
 
 # Create a config.yml file in the /tmp/deps/IDX/ folder
-TEMP_DIR=/tmp/deps/$SUB_DIR
-mkdir -p $TEMP_DIR
-cat > $TEMP_DIR/config.yml << EOF
+cat > $DEP_DIR/$SUB_DIR/config.yml << EOF
 name: flyway-buildpack
 version: 0.1
 EOF
@@ -30,6 +28,11 @@ tar xvzf flyway.tar.gz
 mv flyway-5.0.7/* .
 rm -rf flyway-5.0.7/
 rm flyway.tar.gz
+
+echo Build Dir $BUILD_DIR
+echo Cache Dir $CACHE_DIR
+echo Dep Dir $DEP_DIR
+echo Sub Dir $SUB_DIR
 
 echo Creating $DEP_DIR/profile.d 
 # Create a profile.d file to set any environment variables
