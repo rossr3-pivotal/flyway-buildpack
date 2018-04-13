@@ -25,9 +25,10 @@ mkdir -p $bin_dir
 
 echo Downloading flyway...
 curl -s --retry 15 --retry-delay 2 -L $flyway_url -o $bin_dir/flyway.tar.gz
-tar xvzf $bin_dir/flyway.tar.gz
-mv $bin_dir/flyway-5.0.7/ $bin_dir/
-rm -rf $bin_dir/flyway-5.0.7/
+cd $bin_dir
+tar xvzf flyway.tar.gz
+mv flyway-5.0.7/ $bin_dir/
+rm -rf flyway-5.0.7/
 rm flyway.tar.gz
 
 # Create a profile.d file to set any environment variables
