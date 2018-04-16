@@ -38,7 +38,7 @@ Remove-Item -path $BinDir\flyway.zip
 
 Write-Host "Creating profile.bat"
 $profiledFolder= $DepDir + "\" + $SubDir + "\" + "profile.d"
-$profiledFile = $profileFolder + "\" + "profile.bat"
+$profiledFile = $profiledFolder + "\" + "profile.bat"
 Write-Host "Creating $profiledFile"
 
 New-Item -ItemType directory -Path $profiledFolder
