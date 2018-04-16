@@ -25,13 +25,13 @@ You would then call flyway from your application using
 For Windows: 
 
 ```bash
-$PCF_FLYWAY_BINDIR/flyway [options] [command]
+%PCF_FLYWAY_BINDIR%/flyway [options] [command]
 ```
 
 For Linux:
 
 ```powershell
-%PCF_FLYWAY_BINDIR%\flyway [options] [command]
+$PCF_FLYWAY_BINDIR\flyway [options] [command]
 ```
 
 See the [flyway documentation](https://flywaydb.org/documentation/) for more details 
