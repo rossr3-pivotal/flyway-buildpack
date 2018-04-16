@@ -35,3 +35,17 @@ Move-Item $BinDir\flyway-5.0.7\* $BinDir
 Write-Host "Cleaning up..."
 Remove-Item -path $BinDir\flyway-5.0.7 -recurse
 Remove-Item -path $BinDir\flyway.zip
+
+Write-Host "Creating profile.bat"
+$profiledFolder= $DepDir + "\" + $SubDir + "\" + "profile.d"
+$profiledFile = $profileFolder + "\" + "profile.bat"
+Write-Host "Creating $profiledFile"
+
+New-Item -ItemType directory -Path $profiledFolder
+
+# Create a profile.bat file to set any environment variables
+$fileContents="set DEPS_IDX=$SubDir"';export PCF_FLYWAY_BINDIR=$DepDir/%DEPS_IDX%/bin'
+Set-Content -Value $fileContents -Path $profiledFile
+Write-Host "Flyway buildpack complete"
+
+
