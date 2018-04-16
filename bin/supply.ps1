@@ -44,7 +44,7 @@ Write-Host "Creating $profiledFile"
 New-Item -ItemType directory -Path $profiledFolder
 
 # Create a profile.bat file to set any environment variables
-$fileContents="set DEPS_IDX=$SubDir"';export PCF_FLYWAY_BINDIR=$DepDir/%DEPS_IDX%/bin'
+$fileContents="set DEPS_IDX=$SubDir\n""set PCF_FLYWAY_BINDIR=$DepDir/%DEPS_IDX%/bin\n"
 Set-Content -Value $fileContents -Path $profiledFile
 Write-Host "Flyway buildpack complete"
 
